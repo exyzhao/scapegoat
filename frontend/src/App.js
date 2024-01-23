@@ -1,12 +1,20 @@
 import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CssBaseline from '@mui/material/CssBaseline';
 
-function App() {
+import HomePage from "./pages/HomePage";
+import LobbyPage from './pages/LobbyPage';
+
+const App = () => {
   return (
-    <div>
-      <h1>Scapegoat</h1>
-      <button>Join Lobby</button>
-      <button>Create Lobby</button>
-    </div>
+    <BrowserRouter>
+      <CssBaseline>
+        <Routes>
+          <Route exact path="/" element={<HomePage />} />
+          <Route exact path="/lobby" element={<LobbyPage />} />
+        </Routes>
+      </CssBaseline>
+    </BrowserRouter>
   )
 }
 
